@@ -10,15 +10,19 @@ public class GameManager : MonoBehaviour
     public GameObject[] flyPrefab;
 
     public float spawnDesired;
-    public float coins;
+    public int coins;
 
     public Text scoreText;
     public GameObject ShopWindow;
+
+    public Sprite[] allweapons;
+    Weapon weapons;
     // Start is called before the first frame update
     void Start()
     {
+        weapons = GameObject.FindObjectOfType<Weapon>();
         StartCoroutine(CheckFlies());
-        SpawnFlies(3);
+        SpawnFlies();
     }
 
     // Update is called once per frame
@@ -29,30 +33,71 @@ public class GameManager : MonoBehaviour
 
     IEnumerator CheckFlies()
     {
-        if(GameObject.FindObjectsOfType<Fly>().Length < 0)
+        if (GameObject.FindObjectsOfType<Fly>().Length < 3)
         {
             //Debug.Log("ALL FLIES HAS PERISHED");
 
-            SpawnFlies(3);
+            SpawnFlies();
         }
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         StartCoroutine(CheckFlies());
     }
 
-    void SpawnFlies(float spawnAmount)
+    void SpawnFlies()
     {
-        for (int i = 0; i < spawnAmount; i++)
-        {
-            Vector3 randPos = new Vector3(Random.Range(-3, 3), Random.Range(-3, 3), 0);
-            GameObject tempFly = Instantiate(flyPrefab[Random.Range(0,flyPrefab.Length)], randPos, transform.rotation);
-            tempFly.transform.eulerAngles += new Vector3(0, 0, Random.Range(-4, 4));
-
-        }
+        Vector3 randPos = new Vector3(Random.Range(-3, 3), Random.Range(-3, 3), 0);
+        GameObject tempFly = Instantiate(flyPrefab[Random.Range(0, flyPrefab.Length)], randPos, transform.rotation);
+        tempFly.transform.eulerAngles += new Vector3(0, 0, Random.Range(0, 300));
     }
 
     public void ActivateShop()
     {
         ShopWindow.SetActive(!ShopWindow.activeInHierarchy);
+    }
+
+    bool CanBuyItem(int cost)
+    {
+        if (coins >= cost)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void BuyBorrito()
+    {
+        if (CanBuyItem(10) && !weapons.hasBorrito)
+        {
+            weapons.Weapons.Add(allweapons[0]);
+            coins -= 10;
+        }
+    }
+
+    public void BuySlipper()
+    {
+        if (CanBuyItem(50))
+        {
+
+        }
+    }
+
+    public void BuyFlameThrower()
+    {
+        if (CanBuyItem(100))
+        {
+
+        }
+    }
+
+    public void BuyNuke()
+    {
+        if (CanBuyItem(1000))
+        {
+
+        }
     }
 }

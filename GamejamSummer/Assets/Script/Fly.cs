@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Fly : MonoBehaviour
 {
-    public float goldEarn;
+    public int goldEarn;
 
     public float speed;
     public float lerpT;
@@ -52,9 +52,10 @@ public class Fly : MonoBehaviour
 
     private void OnMouseOver()
     {
-        Debug.Log("0");
+
         if (Input.GetMouseButtonDown(0))
         {
+            Debug.Log("earned " + goldEarn + "gold");
             manager.coins += goldEarn;
             Destroy(this.gameObject);
         }
