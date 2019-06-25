@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8171166377415089503
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7937526031712810852, guid: e969f760f1689664cb2bad9733494739,
+        type: 3}
+      propertyPath: m_Name
+      value: BombFly Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079426600673959498, guid: e969f760f1689664cb2bad9733494739,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.240055
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079426600673959498, guid: e969f760f1689664cb2bad9733494739,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.0399337
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079426600673959498, guid: e969f760f1689664cb2bad9733494739,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079426600673959498, guid: e969f760f1689664cb2bad9733494739,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079426600673959498, guid: e969f760f1689664cb2bad9733494739,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079426600673959498, guid: e969f760f1689664cb2bad9733494739,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079426600673959498, guid: e969f760f1689664cb2bad9733494739,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079426600673959498, guid: e969f760f1689664cb2bad9733494739,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079426600673959498, guid: e969f760f1689664cb2bad9733494739,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079426600673959498, guid: e969f760f1689664cb2bad9733494739,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079426600673959498, guid: e969f760f1689664cb2bad9733494739,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367396881054632089, guid: e969f760f1689664cb2bad9733494739,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 63b70f948bf7c004294967db8ab19175,
+        type: 3}
+    - target: {fileID: 544965624165146863, guid: e969f760f1689664cb2bad9733494739,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0cfaba57e6bdfd949b4711bba3bfb07e, type: 2}
+    - target: {fileID: 6469541555094305638, guid: e969f760f1689664cb2bad9733494739,
+        type: 3}
+      propertyPath: isBomb
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469541555094305638, guid: e969f760f1689664cb2bad9733494739,
+        type: 3}
+      propertyPath: particle
+      value: 
+      objectReference: {fileID: 1351121425499238147, guid: 10daf0fd3fa2987418037d284fdfc48c,
+        type: 3}
+    - target: {fileID: 6469541555094305638, guid: e969f760f1689664cb2bad9733494739,
+        type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e969f760f1689664cb2bad9733494739, type: 3}

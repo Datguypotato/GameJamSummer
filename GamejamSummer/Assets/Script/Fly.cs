@@ -4,20 +4,31 @@ using UnityEngine;
 
 public class Fly : MonoBehaviour
 {
-    public int goldEarn;
+    int goldEarn;
+    public int goldMax;
 
     public float speed;
-    public float lerpT;
-    public bool startLerping;
+    float lerpT;
+    bool startLerping;
+    public bool isBomb;
 
     float desiredRotationz;
     GameManager manager;
+
+    public GameObject particle;
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(ChangeDir(3));
         manager = GameObject.FindObjectOfType<GameManager>();
+
+        goldEarn = Random.Range(1, goldMax);
+
+        if (isBomb)
+        {
+            Invoke("Explode", 3);
+        }
     }
 
     // Update is called once per frame
@@ -53,12 +64,25 @@ public class Fly : MonoBehaviour
     private void OnMouseOver()
     {
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !isBomb)
         {
             Debug.Log("earned " + goldEarn + "gold");
+            Instantiate(particle, transform.position, transform.rotation);
             manager.coins += goldEarn;
             Destroy(this.gameObject);
         }
-    }
 
+        if (Input.GetMouseButtonDown(0) && isBomb)
+        {
+            Instantiate(particle, transform.position, transform.rotation);
+            manager.coins += -goldEarn;
+            Destroy(this.gameObject);
+        }
+    }
+    
+    void Explode()
+    {
+        Instantiate(particle, transform.position, transform.rotation);
+        Destroy(this.gameObject);
+    }
 }

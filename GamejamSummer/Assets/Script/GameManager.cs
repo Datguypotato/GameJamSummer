@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject ShopWindow;
 
     public Sprite[] allweapons;
-    Weapon weapons;
+    public Weapon weapons;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator CheckFlies()
     {
-        if (GameObject.FindObjectsOfType<Fly>().Length < 3)
+        if (GameObject.FindObjectsOfType<Fly>().Length < spawnDesired)
         {
             //Debug.Log("ALL FLIES HAS PERISHED");
 
@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
         ShopWindow.SetActive(!ShopWindow.activeInHierarchy);
     }
 
+    #region ButtonsFunctions
     bool CanBuyItem(int cost)
     {
         if (coins >= cost)
@@ -68,36 +69,56 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void BuyBorrito()
+    void BuyItem(int cost, bool weaponCheck, int index)
     {
-        if (CanBuyItem(10) && !weapons.hasBorrito)
+        if (CanBuyItem(cost) && !weaponCheck)
         {
-            weapons.Weapons.Add(allweapons[0]);
-            coins -= 10;
+            weapons.Weapons.Add(allweapons[index]);
+            coins -= cost;
+            weaponCheck = true;
         }
     }
 
-    public void BuySlipper()
+    public void BuyBorrito()
     {
-        if (CanBuyItem(50))
-        {
-
-        }
+        BuyItem(10, weapons.hasBorrito, 0);
+        //if (CanBuyItem(10) && !weapons.hasBorrito)
+        //{
+        //    weapons.Weapons.Add(allweapons[0]);
+        //    coins -= 10;
+        //    weapons.hasBorrito = true;
+        //}
+    }
+    public void BuyKnife()
+    {
+        BuyItem(50, weapons.hasKnife, 1);
     }
 
     public void BuyFlameThrower()
     {
-        if (CanBuyItem(100))
-        {
+        BuyItem(100, weapons.hasFlame, 2);
 
-        }
+    }
+
+    public void BuyMap()
+    {
+        BuyItem(200, weapons.HasMap, 3);
+
+    }
+
+    public void BuyPan()
+    {
+        BuyItem(500, weapons.hasPan, 4);
+    }
+
+    public void BuyMepper()
+    {
+        BuyItem(666, weapons.hasMep, 5);
     }
 
     public void BuyNuke()
     {
-        if (CanBuyItem(1000))
-        {
-
-        }
+        BuyItem(1000, weapons.hasNuke, 6);
     }
+    #endregion
 }

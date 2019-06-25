@@ -95,7 +95,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: bf5ee8eefcaa55746b962406c752abd1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -113,10 +113,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c70cef3c2d0766648b82aba3a97275fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldEarn: 50
+  goldMax: 100
   speed: 10
-  lerpT: 0
-  startLerping: 0
+  isBomb: 0
+  particle: {fileID: 1744800116792230155, guid: d37aba2a44d3c3a4481754c026a371e6,
+    type: 3}
 --- !u!65 &5617583602277339692
 BoxCollider:
   m_ObjectHideFlags: 0
