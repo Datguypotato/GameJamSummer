@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -79,6 +80,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void BuyHand()
+    {
+        BuyItem(25, weapons.hasHand, 7);
+    }
+
     public void BuyBorrito()
     {
         BuyItem(10, weapons.hasBorrito, 0);
@@ -118,7 +124,12 @@ public class GameManager : MonoBehaviour
 
     public void BuyNuke()
     {
-        BuyItem(1000, weapons.hasNuke, 6);
+        SceneManager.LoadSceneAsync("EndGame");
+    }
+
+    public void BuyBazooka()
+    {
+        BuyItem(750, weapons.hasBazooka, 8);
     }
     #endregion
 }

@@ -8,7 +8,7 @@ public class Weapon : MonoBehaviour
     public List<Sprite> Weapons;
 
     [Space(10)]
-    public bool hasBorrito, hasKnife, HasMap, hasFlame, hasPan, hasMep, hasNuke;
+    public bool hasBorrito, hasKnife, HasMap, hasFlame, hasPan, hasMep, hasNuke, hasHand, hasBazooka;
     [Space(10)]
 
     public int index;
